@@ -1,0 +1,4 @@
+pillow
+django==1.11
+pymysql
+

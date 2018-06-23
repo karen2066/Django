@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block EXTJS %}
+    <script type="text/javascript" src="{% static 'app/order/js/order.js' %}"></script>
+    <script type="text/javascript" src="{% static 'app/common/functions.js' %}"></script>
+
+{% endblock %}
+
+{% block content %}
+
+    <div id="order_info" class="container">
+    <!--订单编号-->
+    <h3>订单编号: {{ order.o_num  }}</h3>
+    <!--处理结束-->
+    <ul>
+
+        <!--所有订单信息展示-->
+            <li>
+                <!--商品名称展示-->
+                <img src="">
+
+                <span> <!-- 数量展示 --></span>
+            </li>
+
+        <!--订单处理结束-->
+
+    </ul>
+        {% csrf_token %}
+        <!--订单id展示-->
+        <button onclick="change_order({{ order.id }})" class="btn btn-success btn-block">
+            Alipay
+        </button>
+
+    </div>
+
+
+{% endblock %}
